@@ -242,7 +242,7 @@ void GenerateVS2010Project(const Project& project)
     projectString += "      <RuntimeTypeInfo>" + RTTI + "</RuntimeTypeInfo>\n";
     projectString += "    </ClCompile>\n";
     projectString += "    <Link>\n";
-    projectString += "      <SubSystem>" + subsystem + "/SubSystem>\n";
+    projectString += "      <SubSystem>" + subsystem + "</SubSystem>\n";
     projectString += "      <GenerateDebugInformation>true</GenerateDebugInformation>\n";
     projectString += "    </Link>\n";
     projectString += "  </ItemDefinitionGroup>\n";
@@ -262,7 +262,7 @@ void GenerateVS2010Project(const Project& project)
     projectString += "      <RuntimeTypeInfo>" + RTTI + "</RuntimeTypeInfo>\n";
     projectString += "    </ClCompile>\n";
     projectString += "    <Link>\n";
-    projectString += "      <SubSystem>" + subsystem + "/SubSystem>\n";
+    projectString += "      <SubSystem>" + subsystem + "</SubSystem>\n";
     projectString += "      <GenerateDebugInformation>true</GenerateDebugInformation>\n";
     projectString += "    </Link>\n";
     projectString += "  </ItemDefinitionGroup>\n";
@@ -284,7 +284,7 @@ void GenerateVS2010Project(const Project& project)
     projectString += "      <RuntimeTypeInfo>" + RTTI + "</RuntimeTypeInfo>\n";
     projectString += "    </ClCompile>\n";
     projectString += "    <Link>\n";
-    projectString += "      <SubSystem>" + subsystem + "/SubSystem>\n";
+    projectString += "      <SubSystem>" + subsystem + "</SubSystem>\n";
     projectString += "      <GenerateDebugInformation>true</GenerateDebugInformation>\n";
     projectString += "      <EnableCOMDATFolding>true</EnableCOMDATFolding>\n";
     projectString += "      <OptimizeReferences>true</OptimizeReferences>\n";
@@ -308,7 +308,7 @@ void GenerateVS2010Project(const Project& project)
     projectString += "      <RuntimeTypeInfo>" + RTTI + "</RuntimeTypeInfo>\n";
     projectString += "    </ClCompile>\n";
     projectString += "    <Link>\n";
-    projectString += "      <SubSystem>" + subsystem + "/SubSystem>\n";
+    projectString += "      <SubSystem>" + subsystem + "</SubSystem>\n";
     projectString += "      <GenerateDebugInformation>true</GenerateDebugInformation>\n";
     projectString += "      <EnableCOMDATFolding>true</EnableCOMDATFolding>\n";
     projectString += "      <OptimizeReferences>true</OptimizeReferences>\n";

@@ -41,7 +41,10 @@ void Generate2010Solution(const Solution& solution)
 {
     std::string solutionString;
 
+    // Header
     solutionString += "Microsoft Visual Studio Solution File, Format Version 11.00\n# Visual Studio 2010\n";
+
+    // Projects
     for(int ii=0; ii<solution.projects.size(); ++ii)
     {
         const Project& project = solution.projects[ii];
@@ -52,5 +55,9 @@ void Generate2010Solution(const Solution& solution)
         solutionString += "\"\n";
         solutionString += "EndProject\n";
     }
+
+    // End
+    solutionString += "Global\n";
+    solutionString += "EndGlobal\n";
 }
 

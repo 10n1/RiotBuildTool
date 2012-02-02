@@ -31,7 +31,7 @@
     <ClCompile Include="testsource14.cpp"/>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{A7619B6F-4762-3819-3E5C-436B2B541D29}  </ProjectGuid>
+    <ProjectGuid>{0EE112D4-B2B7-C0D9-AAC3-8D4055906918}  </ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>TestProjectName</RootNamespace>
   </PropertyGroup>

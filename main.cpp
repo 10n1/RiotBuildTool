@@ -9,12 +9,15 @@
 /* C headers */
 #include <stdlib.h>
 #include <string.h>
+#include <stdio.h>
 #include <time.h>
 /* C++ headers */
 /* External headers */
+#include "cJSON.h"
 /* Internal headers */
 #include "project.h"
 #include "utility.h"
+#include "solution.h"
 
 namespace
 {
@@ -54,6 +57,14 @@ void BuildProjectStruct(void)
     testProject.defines.push_back("MYDEFINE_4");
 }
 
+Solution CreateSolutionFromJSON(cJSON* json)
+{
+    Solution solution;
+    GenerateGUID(solution.guid);
+
+    return solution;
+}
+
 } // anonymous namespace
 
 /*******************************************************************\
@@ -69,6 +80,16 @@ int main(int argc, char* argv[])
 
     BuildProjectStruct();
     GenerateVS2010Project(testProject);
+
+    char buffer[1024*64];
+
+    FILE* file = fopen("solution.json", "r");
+    fread(buffer, 1, sizeof(buffer), file);
+    fclose(file);
+
+    cJSON* json = cJSON_Parse(buffer);
+    Solution s = CreateSolutionFromJSON(json);
+
     return 0;
 }
 
