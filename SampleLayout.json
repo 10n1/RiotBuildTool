@@ -1,0 +1,25 @@
+{
+    "name" : "TheNameOfTheSolution",
+
+    "project1" : {
+        "type" : "executable/staticLib",
+        "targetdir" : "build/",
+        "targetname" : "MyAwesomeExe",
+        "sources" : [
+            "main.cpp", 
+            "foo.cpp", 
+            "foo.h",
+            "bar.h",
+            "bar.cpp",
+            "src/"
+        ],
+        "defines" : [
+            MYDEFINE_ONE,
+            MYDEFINE_TWO,
+        ],
+        "includedirs" : [
+            "include/",
+            "external/inc"
+        ],
+    }
+}
