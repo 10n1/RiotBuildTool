@@ -34,6 +34,7 @@ struct Project
     string  name;
     string  targetDir;
     string  targetName;
+    string  projectFilename;
 
     ProjectType type;
     vector<string>  sourceFiles;

@@ -12,10 +12,16 @@
 /* C++ headers */
 /* External headers */
 /* Internal headers */
+#include "project.h"
 
 /*******************************************************************\
 External Constants And types
 \*******************************************************************/
+struct Solution
+{
+    char            guid[40];
+    vector<Project> projects;
+};
 
 /*******************************************************************\
 External variables
@@ -24,5 +30,6 @@ External variables
 /*******************************************************************\
 External functions
 \*******************************************************************/
+void Generate2010Solution(const Solution& solution);
 
 #endif /* include guard */

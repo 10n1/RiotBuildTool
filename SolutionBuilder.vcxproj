@@ -85,6 +85,7 @@
     <ClCompile Include="cJSON.c" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="project.cpp" />
+    <ClCompile Include="solution.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="cJSON.h" />

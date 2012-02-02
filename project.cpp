@@ -10,6 +10,7 @@
 
 /* C headers */
 /* C++ headers */
+#include <fstream>
 #include <string>
 /* External headers */
 /* Internal headers */
@@ -156,7 +157,7 @@ void GenerateVS2010Project(const Project& project)
     projectString += "  </PropertyGroup>\n";
 
     // General settings
-    projectString += "  <Import Project=\"$(VCTargetsPath)\Microsoft.Cpp.Default.props\" />\n";
+    projectString += "  <Import Project=\"$(VCTargetsPath)\\Microsoft.Cpp.Default.props\" />\n";
     projectString += "  <PropertyGroup Condition=\"'$(Configuration)|$(Platform)'=='Debug|Win32'\" Label=\"Configuration\">\n";
     projectString += "    <ConfigurationType>" + projectType + "</ConfigurationType>\n";
     projectString += "    <UseDebugLibraries>true</UseDebugLibraries>\n";
@@ -181,20 +182,20 @@ void GenerateVS2010Project(const Project& project)
     projectString += "  </PropertyGroup>\n";
 
     // More settings...
-    projectString += "  <Import Project=\"$(VCTargetsPath)\Microsoft.Cpp.props\" />\n";
+    projectString += "  <Import Project=\"$(VCTargetsPath)\\Microsoft.Cpp.props\" />\n";
     projectString += "  <ImportGroup Label=\"ExtensionSettings\">\n";
     projectString += "  </ImportGroup>\n";
     projectString += "  <ImportGroup Label=\"PropertySheets\" Condition=\"'$(Configuration)|$(Platform)'=='Debug|Win32'\">\n";
-    projectString += "    <Import Project=\"$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props\" Condition=\"exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')\" Label=\"LocalAppDataPlatform\" />\n";
+    projectString += "    <Import Project=\"$(UserRootDir)\\Microsoft.Cpp.$(Platform).user.props\" Condition=\"exists('$(UserRootDir)\\Microsoft.Cpp.$(Platform).user.props')\" Label=\"LocalAppDataPlatform\" />\n";
     projectString += "  </ImportGroup>\n";
     projectString += "  <ImportGroup Condition=\"'$(Configuration)|$(Platform)'=='Debug|x64'\" Label=\"PropertySheets\">\n";
-    projectString += "    <Import Project=\"$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props\" Condition=\"exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')\" Label=\"LocalAppDataPlatform\" />\n";
+    projectString += "    <Import Project=\"$(UserRootDir)\\Microsoft.Cpp.$(Platform).user.props\" Condition=\"exists('$(UserRootDir)\\Microsoft.Cpp.$(Platform).user.props')\" Label=\"LocalAppDataPlatform\" />\n";
     projectString += "  </ImportGroup>\n";
     projectString += "  <ImportGroup Label=\"PropertySheets\" Condition=\"'$(Configuration)|$(Platform)'=='Release|Win32'\">\n";
-    projectString += "    <Import Project=\"$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props\" Condition=\"exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')\" Label=\"LocalAppDataPlatform\" />\n";
+    projectString += "    <Import Project=\"$(UserRootDir)\\Microsoft.Cpp.$(Platform).user.props\" Condition=\"exists('$(UserRootDir)\\Microsoft.Cpp.$(Platform).user.props')\" Label=\"LocalAppDataPlatform\" />\n";
     projectString += "  </ImportGroup>\n";
     projectString += "  <ImportGroup Condition=\"'$(Configuration)|$(Platform)'=='Release|x64'\" Label=\"PropertySheets\">\n";
-    projectString += "    <Import Project=\"$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props\" Condition=\"exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')\" Label=\"LocalAppDataPlatform\" />\n";
+    projectString += "    <Import Project=\"$(UserRootDir)\\Microsoft.Cpp.$(Platform).user.props\" Condition=\"exists('$(UserRootDir)\\Microsoft.Cpp.$(Platform).user.props')\" Label=\"LocalAppDataPlatform\" />\n";
     projectString += "  </ImportGroup>\n";
     projectString += "  <PropertyGroup Label=\"UserMacros\" />\n";
 
@@ -315,8 +316,14 @@ void GenerateVS2010Project(const Project& project)
     projectString += "  </ItemDefinitionGroup>\n";
 
     // Closing
-    projectString += "  <Import Project=\"$(VCTargetsPath)\Microsoft.Cpp.targets\" />\n";
+    projectString += "  <Import Project=\"$(VCTargetsPath)\\Microsoft.Cpp.targets\" />\n";
     projectString += "  <ImportGroup Label=\"ExtensionTargets\">\n";
     projectString += "  </ImportGroup>\n";
     projectString += "</Project>\n";
+
+
+    // Now write it out
+    std::ofstream outFile(project.name + ".vcxproj");
+    outFile << projectString;
+    outFile.close();
 }
